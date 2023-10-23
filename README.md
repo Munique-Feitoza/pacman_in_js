@@ -1,6 +1,4 @@
 # Pacman in JavaScript
-
- # 
  
  **The basic game:**
 
@@ -26,7 +24,7 @@
  **What you can do?**
 
 - [x] Copy this code and put in your repository.  
-- [x] Give me instructions about everything.  
+- [x] Give me instructions about anything.  
 - [x] Tell me yours opinions.  
 - [x] Talk to me about this code.  
 - [x] Ask me about this code.  
