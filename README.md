@@ -42,15 +42,15 @@ _CSS_
 
  #
 
-**Creator**  
+## Creator
 [Munique Feitoza](https://www.linkedin.com/in/munique-feitoza-77034b231/)
 
-**Collaboration**  
+## Collaboration
 [Jonathan Mendes](https://www.linkedin.com/in/jonatanbarreiro/)
 
  #
  
-**Documentation:**
+## Documentation:
 
-[Canvas](https://developer.mozilla.org/pt-BR/docs/Web/API/Canvas_API/Tutorial)
+[Canvas](https://developer.mozilla.org/pt-BR/docs/Web/API/Canvas_API/Tutorial)  
 [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
