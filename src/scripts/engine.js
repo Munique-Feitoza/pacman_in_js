@@ -20,6 +20,22 @@ class Boundary {
 	}
 }
 
+class Player {
+  constructor({position, velocity}) {
+    this.position = position;
+    this.velocity = velocity;
+    this.radius = 15;
+  }
+  
+  draw() {
+    c.beginPath();
+    c.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2);
+    c.fillStyle = 'yellow';
+    c.fill();
+    c.closePath();
+  }
+}
+
 const map = [
   ['-', '-', '-', '-', '-', '-', '-'],
   ['-', ' ', ' ', ' ', ' ', ' ', '-'],
@@ -29,6 +45,16 @@ const map = [
   ]
 
 const boundaries = [];
+const player = new Player({
+  position: {
+    x: Boundary.width + Boundary.width / 2,
+    y: Boundary.height + Boundary.height / 2
+  },
+  velocity: {
+    x: 0,
+    y: 0
+  }
+});
 
 map.forEach((row, i) => {
   row.forEach((symbol, j) => {
@@ -49,3 +75,5 @@ map.forEach((row, i) => {
 boundaries.forEach((boundary) => {
 	boundary.draw();
 });
+
+player.draw();
