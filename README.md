@@ -7,7 +7,7 @@
  |   1   |      Project setup      |   ✅    |  23/10/2023  |
  |   2   | Generate map boundaries |   ✅    |           24/10/2023   |
  |   3   |    Generate buttons     |   ✅    |  24/10/2023  |
- |   4   |       Add Pacman        |   ✅    |              |
+ |   4   |       Add Pacman        |   ✅    |           24/10/2023   |
  |   5   |      Add movement       |   🚧    |              |
  |   6   |      Add collision      |   ❌    |              |
  |   7   |        Map style        |   ❌    |              |

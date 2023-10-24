@@ -1,6 +1,10 @@
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 const textScore = document.querySelector('.score');
+const btn_up = document.querySelector('.btn_up');
+const btn_left = document.querySelector('.btn_left');
+const btn_down = document.querySelector('.btn_down');
+const btn_right = document.querySelector('.btn_right');
 
 canvas.width = innerWidth;
 canvas.height = innerHeight;
@@ -33,6 +37,12 @@ class Player {
     c.fillStyle = 'yellow';
     c.fill();
     c.closePath();
+  }
+  
+  update() {
+    this.draw();
+    this.position.x += this.velocity.x;
+    this.position.y += this.velocity.y;
   }
 }
 
@@ -72,8 +82,44 @@ map.forEach((row, i) => {
     }
   })
 })
-boundaries.forEach((boundary) => {
-	boundary.draw();
-});
 
-player.draw();
+function animate() {
+  requestAnimationFrame(animate);
+  boundaries.forEach((boundary) => {
+    boundary.draw();
+  });
+  
+  player.update();
+}
+
+animate();
+
+addEventListener('keydown', ({key}) => {
+  switch (key) {
+    case 'w':
+      player.velocity.y = -5;
+      break;
+    case 'a':
+      player.velocity.x = -5;
+      break;
+    case 's':
+      player.velocity.y = 5;
+      break;
+    case 'd':
+      player.velocity.x = 5;
+      break;
+  }
+})
+
+btn_up.addEventListener('click', () => {
+  player.velocity.y = -5;
+})
+btn_left.addEventListener('click', () => {
+  player.velocity.x = -5;
+})
+btn_down.addEventListener('click', () => {
+  player.velocity.y = 5;
+})
+btn_right.addEventListener('click', () => {
+  player.velocity.x = 5;
+})
