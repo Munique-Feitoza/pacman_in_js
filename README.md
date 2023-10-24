@@ -39,3 +39,18 @@ _CSS_
 - Style:\
 _Canvas_ - HTML/JS\
 _CSS_
+
+ #
+
+**Creator**  
+[Munique Feitoza](https://www.linkedin.com/in/munique-feitoza-77034b231/)
+
+**Collaboration**  
+[Jonathan Mendes](https://www.linkedin.com/in/jonatanbarreiro/)
+
+ #
+ 
+**Documentation:**
+
+[Canvas](https://developer.mozilla.org/pt-BR/docs/Web/API/Canvas_API/Tutorial)
+[JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
