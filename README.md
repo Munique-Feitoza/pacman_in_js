@@ -4,20 +4,21 @@
 
  • |         To do          | Status | Day finished
 :-:|:----------------------:|:------:|:------------:
- 1 |      Project setup     |   ❌   |             |
- 2 | Generate map boundaries|   ❌   |             |
- 3 |        Add Pacman      |   ❌   |             |
- 4 |       Add moviment     |   ❌   |             |
- 5 |      Add collision     |   ❌   |             |
- 6 |        Map style       |   ❌   |             |
- 7 |     Generate fruit     |   ❌   |             |
- 8 |        Eat fruit       |   ❌   |             |
- 9 |        Add score       |   ❌   |             |
-10 |       Create ghost     |   ❌   |             |
-11 |     Create big fruit   |   ❌   |             |
-12 |    Add win condition   |   ❌   |             |
-13 |  Lay out a full level  |   ❌   |             |
-14 | Pacman chomp animation |   ❌   |             |
+ 1 |      Project setup     |   ✅   |  23/10/2023 |
+ 2 | Generate map boundaries|   🚧   |             |
+ 3 |    Generate buttons    |   ✅   |  24/10/2023 |
+ 4 |        Add Pacman      |   ❌   |             |
+ 5 |       Add moviment     |   ❌   |             |
+ 6 |      Add collision     |   ❌   |             |
+ 7 |        Map style       |   ❌   |             |
+ 8 |     Generate fruit     |   ❌   |             |
+ 9 |        Eat fruit       |   ❌   |             |
+10 |        Add score       |   ❌   |             |
+11 |       Create ghost     |   ❌   |             |
+12 |     Create big fruit   |   ❌   |             |
+13 |    Add win condition   |   ❌   |             |
+14 |  Lay out a full level  |   ❌   |             |
+15 | Pacman chomp animation |   ❌   |             |
 
  #
  
