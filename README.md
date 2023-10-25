@@ -4,21 +4,21 @@
 
  |   •   |          To do          | Status | Day finished |
  | :---: | :---------------------: | :----: | :----------: |
- |   1   |      Project setup      |   ✅    |  23/10/2023  |
- |   2   | Generate map boundaries |   ✅    |  24/10/2023  |
- |   3   |    Generate buttons     |   ✅    |  24/10/2023  |
- |   4   |       Add Pacman        |   ✅    |  24/10/2023  |
- |   5   |      Add movement       |   ✅    |  25/10/2023  |
- |   6   |      Add collision      |   ✅    |  25/10/2023  |
- |   7   |        Map style        |   🚧    |              |
- |   8   |     Generate fruit      |   ❌    |              |
- |   9   |        Eat fruit        |   ❌    |              |
- |  10   |        Add score        |   ❌    |              |
- |  11   |      Create ghost       |   ❌    |              |
- |  12   |    Create big fruit     |   ❌    |              |
- |  13   |    Add win condition    |   ❌    |              |
- |  14   |  Lay out a full level   |   ❌    |              |
- |  15   | Pacman chomp animation  |   ❌    |              |
+ |   1   |      Project setup      |   ✅   |  23/10/2023  |
+ |   2   | Generate map boundaries |   ✅   |  24/10/2023  |
+ |   3   |    Generate buttons     |   ✅   |  24/10/2023  |
+ |   4   |       Add Pacman        |   ✅   |  24/10/2023  |
+ |   5   |      Add movement       |   ✅   |  25/10/2023  |
+ |   6   |      Add collision      |   ✅   |  25/10/2023  |
+ |   7   |        Map style        |   ✅   |  25/10/2023  |
+ |   8   |     Generate fruit      |   🚧   |              |
+ |   9   |        Eat fruit        |   ❌   |              |
+ |  10   |        Add score        |   ❌   |              |
+ |  11   |      Create ghost       |   ❌   |              |
+ |  12   |    Create big fruit     |   ❌   |              |
+ |  13   |    Add win condition    |   ❌   |              |
+ |  14   |  Lay out a full level   |   ❌   |              |
+ |  15   | Pacman chomp animation  |   ❌   |              |
 
 ## What you can do?
 
