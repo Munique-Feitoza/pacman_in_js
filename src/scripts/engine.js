@@ -46,14 +46,6 @@ class Player {
   }
 }
 
-const map = [
-  ['-', '-', '-', '-', '-', '-', '-'],
-  ['-', ' ', ' ', ' ', ' ', ' ', '-'],
-  ['-', ' ', '-', ' ', '-', ' ', '-'],
-  ['-', ' ', ' ', ' ', ' ', ' ', '-'],
-  ['-', '-', '-', '-', '-', '-', '-']
-  ]
-
 const boundaries = [];
 const player = new Player({
   position: {
@@ -65,6 +57,44 @@ const player = new Player({
     y: 0
   }
 });
+
+const keys = {
+  w: {
+    pressed: false
+  },
+  a: {
+    pressed: false
+  },
+  s: {
+    pressed: false
+  },
+  d: {
+    pressed: false
+  },
+  btn_up: {
+    pressed: false
+  },
+  btn_left: {
+    pressed: false
+  },
+  btn_down: {
+    pressed: false
+  },
+  btn_right: {
+    pressed: false
+  }
+}
+
+let lastKey = '';
+
+const map = [
+  ['-', '-', '-', '-', '-', '-', '-'],
+  ['-', ' ', ' ', ' ', ' ', ' ', '-'],
+  ['-', ' ', '-', ' ', '-', ' ', '-'],
+  ['-', ' ', ' ', ' ', ' ', ' ', '-'],
+  ['-', '-', '-', '-', '-', '-', '-']
+  ]
+
 
 map.forEach((row, i) => {
   row.forEach((symbol, j) => {
@@ -83,13 +113,45 @@ map.forEach((row, i) => {
   })
 })
 
+
 function animate() {
   requestAnimationFrame(animate);
+  c.clearRect(0, 0, canvas.width, canvas.height)
   boundaries.forEach((boundary) => {
     boundary.draw();
   });
   
   player.update();
+
+  player.velocity.y = 0;
+  player.velocity.x = 0;
+  
+  if((keys.w.pressed && lastKey === 'w') || (keys.btn_up.pressed && lastKey === 'btn_up')) {
+    player.velocity.y = -5;
+  } else if((keys.a.pressed  && lastKey === 'a') || (keys.btn_left.pressed && lastKey === 'btn_left')) {
+    player.velocity.x = -5;
+  } else if((keys.s.pressed  && lastKey === 's') || (keys.btn_down.pressed && lastKey === 'btn_down')) {
+    player.velocity.y = 5;
+  } else if((keys.d.pressed  && lastKey === 'd') || (keys.btn_right.pressed && lastKey === 'btn_right')) {
+    player.velocity.x = 5;
+  } 
+  
+  btn_up.addEventListener('click', () => {
+    keys.btn_up.pressed = true;
+    lastKey = 'btn_up';
+  })
+  btn_left.addEventListener('click', () => {
+    keys.btn_left.pressed = true;
+    lastKey = 'btn_left';
+  })
+  btn_down.addEventListener('click', () => {
+    keys.btn_down.pressed = true;
+    lastKey = 'btn_down';
+  })
+  btn_right.addEventListener('click', () => {
+    keys.btn_right.pressed = true;
+    lastKey = 'btn_right';
+  })
 }
 
 animate();
@@ -97,29 +159,39 @@ animate();
 addEventListener('keydown', ({key}) => {
   switch (key) {
     case 'w':
-      player.velocity.y = -5;
+      keys.w.pressed = true;
+      lastKey = 'w';
       break;
     case 'a':
-      player.velocity.x = -5;
+      keys.a.pressed = true;
+      lastKey = 'a';
       break;
     case 's':
-      player.velocity.y = 5;
+      keys.s.pressed = true;
+      lastKey = 's';
       break;
     case 'd':
-      player.velocity.x = 5;
+      keys.d.pressed = true;
+      lastKey = 'd';
       break;
   }
 })
 
-btn_up.addEventListener('click', () => {
-  player.velocity.y = -5;
+addEventListener('keyup', ({key}) => {
+  switch (key) {
+    case 'w':
+      keys.w.pressed = false;
+      break;
+    case 'a':
+      keys.a.pressed = false;
+      break;
+    case 's':
+      keys.s.pressed = false;
+      break;
+    case 'd':
+      keys.d.pressed = false;
+      break;
+  }
 })
-btn_left.addEventListener('click', () => {
-  player.velocity.x = -5;
-})
-btn_down.addEventListener('click', () => {
-  player.velocity.y = 5;
-})
-btn_right.addEventListener('click', () => {
-  player.velocity.x = 5;
-})
+
+  
