@@ -53,5 +53,5 @@ _CSS_
 ## Documentation:
 
 [Canvas](https://developer.mozilla.org/pt-BR/docs/Web/API/Canvas_API/Tutorial)  
-[JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+[JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)  
 [Images drive](https://drive.google.com/drive/folders/1Cvq2RVrv-z2rR3wPZjgJrUgOAjVSVzj9?usp=sharing)
