@@ -9,8 +9,8 @@
  |   3   |    Generate buttons     |   ✅    |  24/10/2023  |
  |   4   |       Add Pacman        |   ✅    |  24/10/2023  |
  |   5   |      Add movement       |   ✅    |  25/10/2023  |
- |   6   |      Add collision      |   🚧    |              |
- |   7   |        Map style        |   ❌    |              |
+ |   6   |      Add collision      |   ✅    |  25/10/2023  |
+ |   7   |        Map style        |   🚧    |              |
  |   8   |     Generate fruit      |   ❌    |              |
  |   9   |        Eat fruit        |   ❌    |              |
  |  10   |        Add score        |   ❌    |              |
