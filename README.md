@@ -11,10 +11,10 @@
  |   5   |      Add movement       |   ✅   |  25/10/2023  |
  |   6   |      Add collision      |   ✅   |  25/10/2023  |
  |   7   |        Map style        |   ✅   |  25/10/2023  |
- |   8   |     Generate fruit      |   🚧   |              |
- |   9   |        Eat fruit        |   ❌   |              |
- |  10   |        Add score        |   ❌   |              |
- |  11   |      Create ghost       |   ❌   |              |
+ |   8   |     Generate fruit      |   ✅   |  26/10/2023   |
+ |   9   |        Eat fruit        |   ✅   |  26/10/2023   |
+ |  10   |        Add score        |   ✅   |  26/10/2023   |
+ |  11   |      Create ghost       |   🚧   |              |
  |  12   |    Create big fruit     |   ❌   |              |
  |  13   |    Add win condition    |   ❌   |              |
  |  14   |  Lay out a full level   |   ❌   |              |
@@ -28,16 +28,17 @@
 - [x] Talk to me about this code.
 - [x] Ask me about this code.
 - [x] Test this code and talk every bug.
+- [x] Only **necessary** changes that have **relevance** in the code will be **accepted**.
 
 ## About this code
 
-- Using:\
-_JavaScript_\
-_HTML_\
+- Using:  
+_JavaScript_  
+_HTML_  
 _CSS_
 
-- Style:\
-_Canvas_ - HTML/JS\
+- Style:  
+_Canvas_ - HTML/JS  
 _CSS_
 
 
