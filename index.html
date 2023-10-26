@@ -20,18 +20,40 @@
 
   <!-- projeto -->
   <body>
-    <p>Score: 
-      <span class="scoreNumber">0</span>
-    </p>
-
-    <canvas></canvas>
-
-    <div class="control">
-      <button id="left" class="btn_left">&#8592;</button>
-      <button id="up" class="btn_up">&#8593;</button>
-      <button id="down" class="btn_down">&#8595;</button>
-      <button id="right" class="btn_right">&#8594;</button>
+    <div class="info">
+      <h1>Game info</h1>
+      <p>If you're using a PC:</p>
+      <ul>
+        <li>Use WASD to move</li>
+      </ul>
+      <p>If you're using a mobile:</p>
+      <ul>
+        <li>Use the buttons</li>
+      </ul>
+      <div class="btn">START</div>
     </div>
+    
+    
+    <div class="game">
+      <div class="status">
+        <p>Score:
+          <span class="scoreNumber">0</span>
+        </p>
+        <p>Time:
+          <span class="timeNumber">00:00</span>
+        </p>
+      </div>
+      
+      <canvas></canvas>
+  
+      <div class="control">
+        <button id="left" class="btn_left">&#8592;</button>
+        <button id="up" class="btn_up">&#8593;</button>
+        <button id="down" class="btn_down">&#8595;</button>
+        <button id="right" class="btn_right">&#8594;</button>
+      </div>
+    </div>
+    
 
 
   <!-- js/engine -->

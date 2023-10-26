@@ -1,10 +1,36 @@
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 const scoreNumber = document.querySelector('.scoreNumber');
+const timeNumber = document.querySelector('.timeNumber');
 const btn_up = document.querySelector('.btn_up');
 const btn_left = document.querySelector('.btn_left');
 const btn_down = document.querySelector('.btn_down');
 const btn_right = document.querySelector('.btn_right');
+const info = document.querySelector('.info');
+const game = document.querySelector('.game');
+const btn = document.querySelector('.btn');
+
+let startTime = 0;
+let intervalID = null;
+
+function updateTime() {
+  const elapsedTime = Date.now() - startTime;
+  const secs = Math.floor((elapsedTime / 1000) % 60);
+  const mins = Math.floor((elapsedTime / (1000 * 60)) % 60);
+
+  const formattedSecs = secs.toString().padStart(2, '0');
+  const formattedMins = mins.toString().padStart(2, '0');
+
+  timeNumber.textContent = `${formattedMins}:${formattedSecs}`;
+}
+
+btn.addEventListener('click', () => {
+  info.style.display = 'none';
+  game.style.display = 'block';
+
+  startTime = Date.now();
+  intervalID = setInterval(updateTime, 1000);
+});
 
 canvas.width = innerWidth;
 canvas.height = innerHeight;

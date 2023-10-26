@@ -6,8 +6,8 @@ body {
 
 p {
 	color: #fff;
-	padding: 0.5rem;
-	font-size: 40px;
+	padding: 0.5rem 1rem ;
+	font-size: 30px;
 }
 
 .control {
@@ -17,14 +17,43 @@ p {
 	border-radius: 20px 20px 0 0;
 }
 
-button {
+#left, #right, #up, #down {
 	text-align: center;
 	color: #fff;
 	background-color: #f10000;
-	border: 1px solid black;
+	border: 1px solid #000;
 	border-radius: 50%;
 	margin: 0.4rem 1rem 0.9rem;
 	font-size: 30px;
+}
+.info, .btn {
+  background-color: #000;
+  border: 2px solid #0000ff;
+  margin: 1rem;
+  color: #fff;
+}
+.info {
+  padding: 3rem 1rem;
+  margin: 3rem 1rem;
+}
+.btn {
+  padding: 1rem 1rem;
+}
+.btn:hover, .btn:acitve {
+  background-color: #0000ff;
+}
+li {
+  padding-bottom: 4rem;
+}
+h1 {
+  padding: 2rem 0 5rem;
+  font-size: 50px;
+}
+.status {
+  display: flex;
+}
+.game {
+  display: none;
 }
 
 .btn_left {
@@ -63,10 +92,14 @@ button {
 	}
 
 	p {
-		font-size: 18px;
+		font-size: 16px;
 	}
 
 	.control {
 		display: block;
+	}
+	
+	h1 {
+	  font-size: 22px;
 	}
 }
