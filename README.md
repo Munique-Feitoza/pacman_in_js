@@ -40,29 +40,15 @@ _CSS_
 _Canvas_ - HTML/JS\
 _CSS_
 
- #
 
 ## Creator
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://www.linkedin.com/in/munique-feitoza-77034b231/">
-        <img src="https://github.com/account" width="100px;" alt="Foto de Munique Feitoza"/><br>
-        <sub>
-          <b>Munique Feitoza</b>
-        </sub>
-      </a>
-    </td>
-	</tr>
-</table>
+**[Munique Feitoza](https://www.linkedin.com/in/munique-feitoza-77034b231/)**
 
- #
  
 ## Collaboration
 [Jonathan Mendes](https://www.linkedin.com/in/jonatanbarreiro/)
 
- #
  
 ## Documentation:
 
