@@ -43,8 +43,22 @@ _CSS_
  #
 
 ## Creator
-[Munique Feitoza](https://www.linkedin.com/in/munique-feitoza-77034b231/)
 
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/munique-feitoza-77034b231/">
+        <img src="https://github.com/account" width="100px;" alt="Foto de Munique Feitoza"/><br>
+        <sub>
+          <b>Munique Feitoza</b>
+        </sub>
+      </a>
+    </td>
+	</tr>
+</table>
+
+ #
+ 
 ## Collaboration
 [Jonathan Mendes](https://www.linkedin.com/in/jonatanbarreiro/)
 
@@ -52,6 +66,6 @@ _CSS_
  
 ## Documentation:
 
-[Canvas](https://developer.mozilla.org/pt-BR/docs/Web/API/Canvas_API/Tutorial)  
-[JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)  
-[Images drive](https://drive.google.com/drive/folders/1Cvq2RVrv-z2rR3wPZjgJrUgOAjVSVzj9?usp=sharing)
+- [Canvas](https://developer.mozilla.org/pt-BR/docs/Web/API/Canvas_API/Tutorial)  
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)  
+- [Drive](https://drive.google.com/drive/folders/1Cvq2RVrv-z2rR3wPZjgJrUgOAjVSVzj9?usp=sharing)
