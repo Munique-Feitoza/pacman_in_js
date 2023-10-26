@@ -1,6 +1,6 @@
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
-const textScore = document.querySelector('.score');
+const scoreNumber = document.querySelector('.scoreNumber');
 const btn_up = document.querySelector('.btn_up');
 const btn_left = document.querySelector('.btn_left');
 const btn_down = document.querySelector('.btn_down');
@@ -20,9 +20,6 @@ class Boundary {
 	}
 
 	draw() {
-		//c.fillStyle = '#c500ff';
-		//c.fillRect(this.position.x, this.position.y, this.width, this.height);
-		
 		c.drawImage(this.image, this.position.x, this.position.y);
 	}
 }
@@ -49,6 +46,22 @@ class Player {
   }
 }
 
+class Fruit {
+  constructor({position}) {
+    this.position = position;
+    this.radius = 3;
+  }
+  
+  draw() {
+    c.beginPath();
+    c.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2);
+    c.fillStyle = 'white';
+    c.fill();
+    c.closePath();
+  }
+}
+
+const fruits = [];
 const boundaries = [];
 const player = new Player({
   position: {
@@ -90,6 +103,7 @@ const keys = {
 
 let lastKey = '';
 
+let score = 0;
 const map = [
   ['1', '-', '-', '-', '-', '-', '-', '-', '-', '-', '2'],
   ['|', '.', '.', '.', '.', '.', '.', '.', '.', '.', '|'],
@@ -102,7 +116,7 @@ const map = [
   ['|', '.', '[', ']', '.', '.', '.', '[', ']', '.', '|'],
   ['|', '.', '.', '.', '.', '^', '.', '.', '.', '.', '|'],
   ['|', '.', 'b', '.', '[', '5', ']', '.', 'b', '.', '|'],
-  ['|', '.', '.', '.', '.', '.', '.', '.', '.', 'p', '|'],
+  ['|', '.', '.', '.', '.', '.', '.', '.', '.', '.', '|'],
   ['4', '-', '-', '-', '-', '-', '-', '-', '-', '-', '3']
 ];
 
@@ -293,6 +307,16 @@ map.forEach((row, i) => {
             image: createImages('./src/images/pipeConnectorLeft.png')
           })
         )
+        break;
+      case '.':
+        fruits.push(
+          new Fruit({
+            position: {
+              x: j * Boundary.width + Boundary.width / 2,
+              y: i * Boundary.height + Boundary.height / 2
+            }
+          })
+        )
         break
     }
   })
@@ -376,7 +400,19 @@ function animate() {
     }
   } 
   
-  boundaries.forEach((boundary) => {
+  
+  for(let i = fruits.length - 1; 0 < i; i--) {
+    const fruit = fruits[i];
+    fruit.draw();
+    
+    if(Math.hypot(fruit.position.x - player.position.x, fruit.position.y - player.position.y) < fruit.radius + player.radius) {
+      fruits.splice(i, 1);
+      score += 10;
+      scoreNumber.innerHTML = score;
+    }
+  }
+    
+  boundaries.forEach(boundary => {
     boundary.draw();
     
     if(collides({
