@@ -38,7 +38,7 @@ p {
 }
 .info {
   padding: 3rem 1rem;
-  margin: 3rem 1rem;
+  margin: 1rem 1rem;
 }
 .info p {
   margin: 1rem 0;
@@ -52,8 +52,12 @@ p {
 li {
   padding-bottom: 4rem;
 }
+img {
+  width: 50%;
+  padding-bottom: 2rem;
+}
 h1 {
-  padding: 2rem 0 5rem;
+  padding: 2rem 0 1rem;
   font-size: 50px;
 }
 .status {
