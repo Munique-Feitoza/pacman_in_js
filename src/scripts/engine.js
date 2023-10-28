@@ -36,12 +36,12 @@ canvas.width = innerWidth;
 canvas.height = innerHeight;
 
 class Boundary {
-  static width = 36;
-  static height = 36;
+  static width = 40;
+  static height = 40;
 	constructor({position, image}) {
 		this.position = position;
-		this.width = 36;
-		this.height = 36;
+		this.width = 40;
+		this.height = 40;
 		this.image = image;
 	}
 
@@ -403,7 +403,7 @@ function animate() {
       if(collides({
         circle: {...player, velocity: {
           x: 0,
-          y: -6
+          y: -5
         }},
         rectangle: boundary
       })) {
@@ -411,7 +411,7 @@ function animate() {
         player.velocity.y = 0;
         break;
       } else {
-        player.velocity.y = -6;
+        player.velocity.y = -5;
       }
     }
   } else if((keys.a.pressed  && lastKey === 'a') || (keys.btn_left.pressed && lastKey === 'btn_left')) {
@@ -419,7 +419,7 @@ function animate() {
       const boundary = boundaries[i];
       if(collides({
         circle: {...player, velocity: {
-          x: -6,
+          x: -5,
           y: 0
         }},
         rectangle: boundary
@@ -428,7 +428,7 @@ function animate() {
         player.velocity.x = 0;
         break;
       } else {
-        player.velocity.x = -6;
+        player.velocity.x = -5;
       }
     }
   } else if((keys.s.pressed  && lastKey === 's') || (keys.btn_down.pressed && lastKey === 'btn_down')) {
@@ -437,7 +437,7 @@ function animate() {
       if(collides({
         circle: {...player, velocity: {
           x: 0,
-          y: 6
+          y: 5
         }},
         rectangle: boundary
       })) {
@@ -445,7 +445,7 @@ function animate() {
         player.velocity.y = 0;
         break;
       } else {
-        player.velocity.y = 6;
+        player.velocity.y = 5;
       }
     }
   } else if((keys.d.pressed  && lastKey === 'd') || (keys.btn_right.pressed && lastKey === 'btn_right')) {
@@ -453,7 +453,7 @@ function animate() {
       const boundary = boundaries[i];
       if(collides({
         circle: {...player, velocity: {
-          x: 6,
+          x: 5,
           y: 0
         }},
         rectangle: boundary
@@ -462,7 +462,7 @@ function animate() {
         player.velocity.x = 0;
         break;
       } else {
-        player.velocity.x = 6;
+        player.velocity.x = 5;
       }
     }
   } 

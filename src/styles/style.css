@@ -99,7 +99,8 @@ h1 {
 @media screen and (max-width: 420px) {
 	canvas {
 		height: 38rem;
-		width: 25rem;
+		width: 27.5rem;
+		margin-left: -50px;
 	}
 
 	p {
