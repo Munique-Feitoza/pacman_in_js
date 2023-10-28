@@ -11,14 +11,15 @@
  |   5   |      Add movement       |   ✅   |  25/10/2023  |
  |   6   |      Add collision      |   ✅   |  25/10/2023  |
  |   7   |        Map style        |   ✅   |  25/10/2023  |
- |   8   |     Generate fruit      |   ✅   |  26/10/2023   |
- |   9   |        Eat fruit        |   ✅   |  26/10/2023   |
- |  10   |        Add score        |   ✅   |  26/10/2023   |
- |  11   |      Create ghost       |   🚧   |              |
- |  12   |    Create big fruit     |   ❌   |              |
- |  13   |    Add win condition    |   ❌   |              |
- |  14   |  Lay out a full level   |   ❌   |              |
- |  15   | Pacman chomp animation  |   ❌   |              |
+ |   8   |     Generate fruit      |   ✅   |  26/10/2023  |
+ |   9   |        Eat fruit        |   ✅   |  26/10/2023  |
+ |  10   |        Add score        |   ✅   |  26/10/2023  |
+ |  11   |      Create ghost       |   ✅   |  28/10/2023  |
+ |  12   |         Fix bugs        |   🚧   |              |
+ |  13   |    Create big fruit     |   ❌   |              |
+ |  14   |    Add win condition    |   ❌   |              |
+ |  15   |  Lay out a full level   |   ❌   |              |
+ |  16   | Pacman chomp animation  |   ❌   |              |
 
 ## What you can do?
 
