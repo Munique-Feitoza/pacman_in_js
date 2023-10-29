@@ -18,8 +18,9 @@ let startTime = 0;
 let intervalID = null;
 let startMove = false;
 
-function playAudio(music) {
+function playAudio(music, volume) {
   const audio = new Audio(`./src/sounds/${music}.mp3`);
+  audio.volume = volume;
   
   try {
     audio.play();
@@ -41,7 +42,7 @@ function updateTime() {
 }
 
 btnStart.addEventListener('click', () => {
-  gameAudio = playAudio('soundGame');
+  gameAudio = playAudio('soundGame', 0.5);
   info.style.display = 'none';
   game.style.display = 'block';
 
@@ -54,7 +55,7 @@ function youLose() {
   if (gameAudio) {
     gameAudio.pause();
   }
-  let loseAudio = playAudio('soundLose');
+  let loseAudio = playAudio('soundLose', 0.5);
   game.style.display = 'none';
   lose.style.display = 'block';
 }
