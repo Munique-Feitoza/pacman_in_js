@@ -9,6 +9,7 @@ const btn_right = document.querySelector('.btn_right');
 const info = document.querySelector('.info');
 const lose = document.querySelector('.lose');
 const win = document.querySelector('.win');
+const timer = document.querySelector('.timer');
 const game = document.querySelector('.game');
 const btnStart = document.querySelector('.btnStart');
 
@@ -43,6 +44,7 @@ function youLose() {
 function youWin() {
   game.style.display = 'none';
   win.style.display = 'block';
+  timer.innerHTML = timeNumber.textContent;
 }
 
 canvas.width = innerWidth;
@@ -73,7 +75,7 @@ class Player {
   draw() {
     c.beginPath();
     c.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2);
-    c.fillStyle = 'yellow';
+    c.fillStyle = '#ff0';
     c.fill();
     c.closePath();
   }
@@ -94,12 +96,13 @@ class Ghost {
     this.color = color;
     this.prevCollisions = [];
     this.speed = 2;
+    this.scared = false;
   }
   
   draw() {
     c.beginPath();
     c.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2);
-    c.fillStyle = this.color;
+    c.fillStyle = this.scared ? '#00f' : this.color;
     c.fill();
     c.closePath();
   }
@@ -113,7 +116,6 @@ class Ghost {
   }
 }
 
-
 class Fruit {
   constructor({position}) {
     this.position = position;
@@ -123,7 +125,22 @@ class Fruit {
   draw() {
     c.beginPath();
     c.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2);
-    c.fillStyle = 'white';
+    c.fillStyle = '#fff';
+    c.fill();
+    c.closePath();
+  }
+}
+
+class PowerUp {
+  constructor({position}) {
+    this.position = position;
+    this.radius = 8;
+  }
+  
+  draw() {
+    c.beginPath();
+    c.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2);
+    c.fillStyle = '#fff';
     c.fill();
     c.closePath();
   }
@@ -131,6 +148,7 @@ class Fruit {
 
 const fruits = [];
 const boundaries = [];
+const powerUps = [];
 const ghosts = [
   new Ghost({
     position: {
@@ -420,7 +438,17 @@ map.forEach((row, i) => {
             }
           })
         )
-        break
+        break;
+      case 'p':
+        powerUps.push(
+          new PowerUp({
+            position: {
+              x: j * Boundary.width + Boundary.width / 2,
+              y: i * Boundary.height + Boundary.height / 2
+            }
+          })
+        )
+        break;
     }
   })
 })
@@ -505,9 +533,34 @@ function animate() {
       }
     }
   } 
+  for(let i = ghosts.length - 1; i >= 0; i--) {
+    const ghost = ghosts[i];
+    if(Math.hypot(ghost.position.x - player.position.x, ghost.position.y - player.position.y) < ghost.radius + player.radius && !ghost.scared) {
+      
+        cancelAnimationFrame(animationId);
+        clearInterval(intervalID);
+        
+        setTimeout(() => {youLose()}, 2000);
+    }
+  }
+  for(let i = powerUps.length - 1; i >= 0; i--) {
+    const powerUp = powerUps[i];
+    powerUp.draw();
+    
+    if(Math.hypot(powerUp.position.x - player.position.x, powerUp.position.y - player.position.y) < powerUp.radius + player.radius) {
+      powerUps.splice(i, 1);
+      
+      ghosts.forEach(ghost => {
+        ghost.scared = true;
+        
+        setTimeout(() => {
+          ghost.scared = false;
+        }, 5000);
+      })
+    }
+  }
   
-  
-  for(let i = fruits.length - 1; 0 < i; i--) {
+  for(let i = fruits.length - 1; i >= 0; i--) {
     const fruit = fruits[i];
     fruit.draw();
     
@@ -533,11 +586,6 @@ function animate() {
   player.update();
   ghosts.forEach(ghost => {
     ghost.update();
-    
-    if(Math.hypot(ghost.position.x - player.position.x, ghost.position.y - player.position.y) < ghost.radius + player.radius) {
-      cancelAnimationFrame(animationId);
-      setTimeout(youLose(), 7000);
-    }
     
     const collisions = [];
     boundaries.forEach(boundary => {
