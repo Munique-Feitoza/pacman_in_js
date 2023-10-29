@@ -7,8 +7,10 @@ const btn_left = document.querySelector('.btn_left');
 const btn_down = document.querySelector('.btn_down');
 const btn_right = document.querySelector('.btn_right');
 const info = document.querySelector('.info');
+const lose = document.querySelector('.lose');
+const win = document.querySelector('.win');
 const game = document.querySelector('.game');
-const btn = document.querySelector('.btn');
+const btnStart = document.querySelector('.btnStart');
 
 let startTime = 0;
 let intervalID = null;
@@ -25,7 +27,7 @@ function updateTime() {
   timeNumber.textContent = `${formattedMins}:${formattedSecs}`;
 }
 
-btn.addEventListener('click', () => {
+btnStart.addEventListener('click', () => {
   info.style.display = 'none';
   game.style.display = 'block';
 
@@ -33,6 +35,15 @@ btn.addEventListener('click', () => {
   startMove = true;
   intervalID = setInterval(updateTime, 1000);
 });
+
+function youLose() {
+  game.style.display = 'none';
+  lose.style.display = 'block';
+}
+function youWin() {
+  game.style.display = 'none';
+  win.style.display = 'block';
+}
 
 canvas.width = innerWidth;
 canvas.height = innerHeight;
@@ -76,7 +87,7 @@ class Player {
 
 class Ghost {
   static speed = 2;
-  constructor({position, velocity, color = 'red'}) {
+  constructor({position, velocity, color}) {
     this.position = position;
     this.velocity = velocity;
     this.radius = 15;
@@ -124,12 +135,35 @@ const ghosts = [
   new Ghost({
     position: {
       x: Boundary.width * 8 + Boundary.width / 2,
-      y: Boundary.height * 7 + Boundary.height / 2
+      y: Boundary.height * 11 + Boundary.height / 2
     },
     velocity: {
       x: Ghost.speed,
       y: 0
-    }
+    },
+    color: '#f00'
+  }),
+  new Ghost({
+    position: {
+      x: Boundary.width * 5 + Boundary.width / 2,
+      y: Boundary.height * 11 + Boundary.height / 2
+    },
+    velocity: {
+      x: Ghost.speed,
+      y: 0
+    },
+    color: '#0ff'
+  }),
+  new Ghost({
+    position: {
+      x: Boundary.width * 6 + Boundary.width / 2,
+      y: Boundary.height * 11 + Boundary.height / 2
+    },
+    velocity: {
+      x: Ghost.speed,
+      y: 0
+    },
+    color: '#ffa500'
   })
 ];
 const player = new Player({
@@ -175,7 +209,7 @@ let lastKey = '';
 let score = 0;
 const map = [
   ['1', '-', '-', '-', '-', '-', '-', '-', '-', '-', '2'],
-  ['|', '.', '.', '.', '.', '.', '.', '.', '.', '.', '|'],
+  ['|', '.', '.', '.', '.', '.', '.', '.', '.', 'p', '|'],
   ['|', '.', 'b', '.', '[', '7', ']', '.', 'b', '.', '|'],
   ['|', '.', '.', '.', '.', '_', '.', '.', '.', '.', '|'],
   ['|', '.', '[', ']', '.', '.', '.', '[', ']', '.', '|'],
@@ -185,7 +219,7 @@ const map = [
   ['|', '.', '[', ']', '.', '.', '.', '[', ']', '.', '|'],
   ['|', '.', '.', '.', '.', '^', '.', '.', '.', '.', '|'],
   ['|', '.', 'b', '.', '[', '5', ']', '.', 'b', '.', '|'],
-  ['|', '.', '.', '.', '.', '.', '.', '.', '.', '.', '|'],
+  ['|', 'p', '.', '.', '.', '.', '.', '.', '.', 'p', '|'],
   ['4', '-', '-', '-', '-', '-', '-', '-', '-', '-', '3']
 ];
 
@@ -397,8 +431,9 @@ function collides({circle, rectangle}) {
   return(circle.position.y - circle.radius + circle.velocity.y <= rectangle.position.y + rectangle.height + padding && circle.position.x + circle.radius + circle.velocity.x >= rectangle.position.x - padding && circle.position.y + circle.radius + circle.velocity.y >= rectangle.position.y - padding && circle.position.x - circle.radius + circle.velocity.x <= rectangle.position.x + rectangle.width + padding);
 }
 
+let animationId;
 function animate() {
-  requestAnimationFrame(animate);
+  animationId = requestAnimationFrame(animate);
   c.clearRect(0, 0, canvas.width, canvas.height);
   
   if((keys.w.pressed && lastKey === 'w') || (keys.btn_up.pressed && lastKey === 'btn_up')) {
@@ -498,6 +533,11 @@ function animate() {
   player.update();
   ghosts.forEach(ghost => {
     ghost.update();
+    
+    if(Math.hypot(ghost.position.x - player.position.x, ghost.position.y - player.position.y) < ghost.radius + player.radius) {
+      cancelAnimationFrame(animationId);
+      setTimeout(youLose(), 7000);
+    }
     
     const collisions = [];
     boundaries.forEach(boundary => {

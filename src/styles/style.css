@@ -30,27 +30,34 @@ p {
 	margin: 0.4rem 1rem 0.9rem;
 	font-size: 30px;
 }
-.info, .btn {
+.info, .lose, .win, .btnStart, .btnReset {
   background-color: #000;
-  border: 2px solid #0000ff;
+  border: 4px solid #0000ff;
   margin: 1rem;
   color: #fff;
 }
-.info {
+
+.info, .lose, .win {
   padding: 3rem 1rem;
   margin: 1rem 1rem;
 }
-.info p {
+.info p, .lose p, .win p {
   margin: 1rem 0;
 }
-.btn {
+.btnStart, .btnReset {
   padding: 1rem 1rem;
 }
-.btn:hover, .btn:acitve {
+.btnStart:hover, .btnStart:acitve, .btnReset:hover, .btnReset:acitve {
   background-color: #0000ff;
 }
 li {
   padding-bottom: 4rem;
+}
+.lose img {
+  width: 40%;
+}
+.win img {
+  width: 60%;
 }
 img {
   width: 50%;
@@ -63,7 +70,7 @@ h1 {
 .status {
   display: flex;
 }
-.game {
+.game, .lose, .win {
   display: none;
 }
 
