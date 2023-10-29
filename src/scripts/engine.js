@@ -13,9 +13,21 @@ const timer = document.querySelector('.timer');
 const game = document.querySelector('.game');
 const btnStart = document.querySelector('.btnStart');
 
+let gameAudio;
 let startTime = 0;
 let intervalID = null;
 let startMove = false;
+
+function playAudio(music) {
+  const audio = new Audio(`./src/sounds/${music}.mp3`);
+  
+  try {
+    audio.play();
+  } catch {
+    //não tem áudio aqui
+  }
+  return audio;
+}
 
 function updateTime() {
   const elapsedTime = Date.now() - startTime;
@@ -29,6 +41,7 @@ function updateTime() {
 }
 
 btnStart.addEventListener('click', () => {
+  gameAudio = playAudio('soundGame');
   info.style.display = 'none';
   game.style.display = 'block';
 
@@ -38,6 +51,10 @@ btnStart.addEventListener('click', () => {
 });
 
 function youLose() {
+  if (gameAudio) {
+    gameAudio.pause();
+  }
+  let loseAudio = playAudio('soundLose');
   game.style.display = 'none';
   lose.style.display = 'block';
 }
