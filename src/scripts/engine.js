@@ -585,7 +585,7 @@ function animate() {
   )
 }
 
-setTimeout(animate(), 100000);
+setTimeout(animate(), 100/60);
 
 addEventListener('keydown', ({key}) => {
   switch (key) {
