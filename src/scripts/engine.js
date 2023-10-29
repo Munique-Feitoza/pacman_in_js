@@ -542,6 +542,7 @@ function animate() {
     if(collisions.length > ghost.prevCollisions.length)
       ghost.prevCollisions = collisions;
     
+    
     if(JSON.stringify(collisions) !== JSON.stringify(ghost.prevCollisions)) {
       
       if(ghost.velocity.x > 0) ghost.prevCollisions.push('right')
@@ -576,10 +577,11 @@ function animate() {
       
       ghost.prevCollisions = [];
     }
-  })
+  }
+  )
 }
 
-setTimeout(animate(), 1000/60);
+setTimeout(animate(), 100000);
 
 addEventListener('keydown', ({key}) => {
   switch (key) {
