@@ -16,8 +16,8 @@
  |  10   |        Add score        |   ✅   |  26/10/2023  |
  |  11   |      Create ghost       |   ✅   |  28/10/2023  |
  |  12   |         Fix bugs        |   ✅   |  29/10/2023  |
- |  13   |    Create big fruit     |   🚧   |              |
- |  14   |    Add win condition    |   ❌   |              |
+ |  13   |    Create big fruit     |   ✅   |  29/10/2023  |
+ |  14   |    Add win condition    |   🚧   |              |
  |  15   |  Lay out a full level   |   ❌   |              |
  |  16   | Pacman chomp animation  |   ❌   |              |
 
