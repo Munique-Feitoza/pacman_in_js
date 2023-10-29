@@ -12,6 +12,7 @@ const btn = document.querySelector('.btn');
 
 let startTime = 0;
 let intervalID = null;
+let startMove = false;
 
 function updateTime() {
   const elapsedTime = Date.now() - startTime;
@@ -29,6 +30,7 @@ btn.addEventListener('click', () => {
   game.style.display = 'block';
 
   startTime = Date.now();
+  startMove = true;
   intervalID = setInterval(updateTime, 1000);
 });
 
@@ -92,9 +94,11 @@ class Ghost {
   }
   
   update() {
-    this.draw();
-    this.position.x += this.velocity.x;
-    this.position.y += this.velocity.y;
+    if(startMove){
+      this.draw();
+      this.position.x += this.velocity.x;
+      this.position.y += this.velocity.y;
+    }
   }
 }
 
@@ -119,8 +123,8 @@ const boundaries = [];
 const ghosts = [
   new Ghost({
     position: {
-      x: Boundary.width * 6 + Boundary.width / 2,
-      y: Boundary.height + Boundary.height / 2
+      x: Boundary.width * 8 + Boundary.width / 2,
+      y: Boundary.height * 7 + Boundary.height / 2
     },
     velocity: {
       x: Ghost.speed,
