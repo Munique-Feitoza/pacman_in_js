@@ -30,7 +30,7 @@
 - [x] Ask me about this code.
 - [x] Test this code and talk every bug.
 - [x] Only **necessary** changes that have **relevance** in the code will be **accepted**.
-- [ ] Pls don't use a lot tab in my code, I am dyslexic, **I** need understand my code, thanks.
+- [ ] Pls don't use a lot espace/tab in my code, I'm dyslexic, **I** need understand my code, thanks.
 ## About this code
 
 - Using:  
