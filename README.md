@@ -1,37 +1,33 @@
 # Pacman in JavaScript
 
-## The basic game
+Pacman game made in JavaScript, accessible for mobile and computers.
 
- |   •   |          To do          | Status | Day finished |
- | :---: | :---------------------: | :----: | :----------: |
- |   1   |      Project setup      |   ✅   |  23/10/2023  |
- |   2   | Generate map boundaries |   ✅   |  24/10/2023  |
- |   3   |    Generate buttons     |   ✅   |  24/10/2023  |
- |   4   |       Add Pacman        |   ✅   |  24/10/2023  |
- |   5   |      Add movement       |   ✅   |  25/10/2023  |
- |   6   |      Add collision      |   ✅   |  25/10/2023  |
- |   7   |        Map style        |   ✅   |  25/10/2023  |
- |   8   |     Generate fruit      |   ✅   |  26/10/2023  |
- |   9   |        Eat fruit        |   ✅   |  26/10/2023  |
- |  10   |        Add score        |   ✅   |  26/10/2023  |
- |  11   |      Create ghost       |   ✅   |  28/10/2023  |
- |  12   |         Fix bugs        |   ✅   |  29/10/2023  |
- |  13   |    Create big fruit     |   ✅   |  29/10/2023  |
- |  14   |    Add win condition    |   🚧   |              |
- |  15   |  Lay out a full level   |   ❌   |              |
- |  16   | Pacman chomp animation  |   ❌   |              |
+[Play here]()
 
-## What you can do?
+## Timeline
+<details>
+  <summary>Basic Game</summary>
+  <ol>
+    <li>Project setup - 23/10/2023</li>
+    <li>Generate map boundaries - 24/10/2023</li>
+		<li>Generate buttons - 24/10/2023</li>
+    <li>Add Pacman - 24/10/2023</li>
+		<li>Add movement - 25/10/2023</li>
+    <li>Add collision - 25/10/2023</li>
+		<li>Map style - 25/10/2023</li>
+    <li>Generate fruit - 26/10/2023</li>
+		<li>Eat fruit - 26/10/2023</li>
+    <li>Add score - 26/10/2023</li>
+		<li>Create ghost - 28/10/2023</li>
+    <li>Fix bugs - 29/10/2023</li>
+		<li>Create big fruit - 29/10/2023</li>
+    <li>Add win condition - 31/10/2023</li>
+		<li>Lay out a full level - 31/10/2023</li>
+    <li>Pacman chomp animation - 31/10/2023</li>
+  </ol>
+</details>
 
-- [x] Copy this code and put in your repository.
-- [x] Give me instructions about anything.
-- [x] Tell me yours opinions.
-- [x] Talk to me about this code.
-- [x] Ask me about this code.
-- [x] Test this code and talk every bug.
-- [x] Only **necessary** changes that have **relevance** in the code will be **accepted**.
-- [ ] Pls don't use a lot espace/tab in my code, I'm dyslexic, **I** need understand my code, thanks.
-## About this code
+ ## About this code
 
 - Using:  
 _JavaScript_  
@@ -50,6 +46,9 @@ _CSS_
  
 ## Collaboration
 [Jonathan Mendes](https://www.linkedin.com/in/jonatanbarreiro/)
+  * Add .editorconfig
+  * Add .prettierrc
+  * Add .vscode
 
  
 ## Documentation:
