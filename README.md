@@ -2,7 +2,7 @@
 
 Pacman game made in JavaScript, accessible for mobile and computers.
 
-[Play here]()
+[Play here](https://munique-feitoza.github.io/pacman_in_js/)
 
 ## Timeline
 <details>
@@ -42,6 +42,7 @@ _CSS_
 ## Creator
 
 **[Munique Feitoza](https://www.linkedin.com/in/munique-feitoza-77034b231/)**
+ >Yeah, I used a cellphone to do this game.
 
  
 ## Collaboration
