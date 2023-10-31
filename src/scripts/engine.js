@@ -61,8 +61,8 @@ function youWin() {
   timer.innerHTML = timeNumber.textContent;
 }
 
-canvas.width = innerWidth;
-canvas.height = innerHeight;
+canvas.width = 420;
+canvas.height = 720;
 
 class Boundary {
   static width = 36;
