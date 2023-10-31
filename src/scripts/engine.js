@@ -52,10 +52,6 @@ btnStart.addEventListener('click', () => {
 });
 
 function youLose() {
-  if (gameAudio) {
-    gameAudio.pause();
-  }
-  let loseAudio = playAudio('soundLose', 0.5);
   game.style.display = 'none';
   lose.style.display = 'block';
 }
@@ -88,20 +84,34 @@ class Player {
     this.position = position;
     this.velocity = velocity;
     this.radius = 15;
+    this.radians = 0.75;
+    this.openRate = 0.10;
+    this.rotation = 0;
   }
   
   draw() {
+    c.save();
+    c.translate(this.position.x, this.position.y);
+    c.rotate(this.rotation);
+    c.translate(-this.position.x, -this.position.y);
     c.beginPath();
-    c.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2);
+    c.arc(this.position.x, this.position.y, this.radius, this.radians, Math.PI * 2 - this.radians);
+    c.lineTo(this.position.x, this.position.y, )
     c.fillStyle = '#ff0';
     c.fill();
     c.closePath();
+    c.restore();
   }
   
   update() {
     this.draw();
     this.position.x += this.velocity.x;
     this.position.y += this.velocity.y;
+    
+    if(this.radians < 0 || this.radians > 0.75) {
+      this.openRate = - this.openRate;
+    }
+    this.radians += this.openRate;
   }
 }
 
@@ -181,17 +191,6 @@ const ghosts = [
   }),
   new Ghost({
     position: {
-      x: Boundary.width * 5 + Boundary.width / 2,
-      y: Boundary.height * 11 + Boundary.height / 2
-    },
-    velocity: {
-      x: Ghost.speed,
-      y: 0
-    },
-    color: '#0ff'
-  }),
-  new Ghost({
-    position: {
       x: Boundary.width * 6 + Boundary.width / 2,
       y: Boundary.height * 11 + Boundary.height / 2
     },
@@ -248,11 +247,11 @@ const map = [
   ['|', '.', '.', '.', '.', '.', '.', '.', '.', 'p', '|'],
   ['|', '.', 'b', '.', '[', '7', ']', '.', 'b', '.', '|'],
   ['|', '.', '.', '.', '.', '_', '.', '.', '.', '.', '|'],
-  ['|', '.', '[', ']', '.', '.', '.', '[', ']', '.', '|'],
+  ['|', '.', '[', ']', '.', 'p', '.', '[', ']', '.', '|'],
   ['|', '.', '.', '.', '.', '^', '.', '.', '.', '.', '|'],
   ['|', '.', 'b', '.', '[', '+', ']', '.', 'b', '.', '|'],
   ['|', '.', '.', '.', '.', '_', '.', '.', '.', '.', '|'],
-  ['|', '.', '[', ']', '.', '.', '.', '[', ']', '.', '|'],
+  ['|', '.', '[', ']', '.', 'p', '.', '[', ']', '.', '|'],
   ['|', '.', '.', '.', '.', '^', '.', '.', '.', '.', '|'],
   ['|', '.', 'b', '.', '[', '5', ']', '.', 'b', '.', '|'],
   ['|', 'p', '.', '.', '.', '.', '.', '.', '.', 'p', '|'],
@@ -557,10 +556,23 @@ function animate() {
       
         cancelAnimationFrame(animationId);
         clearInterval(intervalID);
-        
+        if (gameAudio) {
+          gameAudio.pause();
+        }
+        let loseAudio = playAudio('soundLose', 0.5);
         setTimeout(() => {youLose()}, 2000);
     }
   }
+  
+  if(fruits.length === 0 && powerUps.length === 0) {
+    cancelAnimationFrame(animationId);
+    clearInterval(intervalID);
+    if (gameAudio) {
+      gameAudio.pause();
+    }
+    setTimeout(() => {youWin()}, 2000);
+  }
+  
   for(let i = powerUps.length - 1; i >= 0; i--) {
     const powerUp = powerUps[i];
     powerUp.draw();
@@ -687,8 +699,17 @@ function animate() {
       
       ghost.prevCollisions = [];
     }
+  })
+  
+  if(player.velocity.x > 0) {
+    player.rotation = 0;
+  } else if(player.velocity.x < 0) {
+    player.rotation = Math.PI;
+  } else if(player.velocity.y < 0) {
+    player.rotation = Math.PI * 1.5;
+  } else if(player.velocity.y > 0) {
+    player.rotation = Math.PI / 2;
   }
-  )
 }
 
 setInterval(animate(), 1000/60);
