@@ -25,7 +25,7 @@ function playAudio(music, volume) {
   try {
     audio.play();
   } catch {
-    //não tem áudio aqui
+    
   }
   return audio;
 }
@@ -42,10 +42,10 @@ function updateTime() {
 }
 
 btnStart.addEventListener('click', () => {
-  gameAudio = playAudio('soundGame', 0.5);
   info.style.display = 'none';
   game.style.display = 'block';
-
+  
+  gameAudio = playAudio('soundGame', 0.5);
   startTime = Date.now();
   startMove = true;
   intervalID = setInterval(updateTime, 1000);
@@ -556,6 +556,7 @@ function animate() {
       
         cancelAnimationFrame(animationId);
         clearInterval(intervalID);
+        
         if (gameAudio) {
           gameAudio.pause();
         }
@@ -567,9 +568,11 @@ function animate() {
   if(fruits.length === 0 && powerUps.length === 0) {
     cancelAnimationFrame(animationId);
     clearInterval(intervalID);
+    
     if (gameAudio) {
       gameAudio.pause();
     }
+    let winAudio = playAudio('soundWin', 0.5);
     setTimeout(() => {youWin()}, 2000);
   }
   
