@@ -572,7 +572,7 @@ function animate() {
     if (gameAudio) {
       gameAudio.pause();
     }
-    let winAudio = playAudio('soundWin', 0.5);
+    let winAudio = playAudio('soundWin', 1);
     setTimeout(() => {youWin()}, 2000);
   }
   
