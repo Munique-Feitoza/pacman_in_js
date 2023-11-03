@@ -120,7 +120,7 @@ h1 {
 	box-shadow: inset 3px 4px 0 #222;
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 768px) {
 	canvas {
 		height: 38rem;
 		width: 24.7rem;
