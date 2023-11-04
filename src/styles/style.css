@@ -87,6 +87,7 @@ h1 {
   right: 3rem;
   text-align: right;
 }
+
 .game, .lose, .win {
   display: none;
 }

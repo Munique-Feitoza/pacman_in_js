@@ -3,23 +3,23 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- title -->
+  
+    <!-- title -->
     <title>Pacman</title>
-
-  <!-- font -->
+  
+    <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
-
-  <!-- css -->
+  
+    <!-- css -->
     <link rel="stylesheet" href="./src/styles/reset.css">
     <link rel="stylesheet" href="./src/styles/style.css">
   </head>
-
+  
   <!-- projeto -->
-  <body>
+  
+   <body>
     <div class="info">
       <h1>GAME INFO</h1>
       <img src="./src/images/pacmanEating.jpg" />
@@ -33,8 +33,7 @@
       </ul>
       <div class="btnStart">START</div>
     </div>
-    
-    
+  
     <div class="game">
       <div class="status">
         <p>Score:
@@ -44,7 +43,7 @@
           <span class="timeNumber">00:00</span>
         </p>
       </div>
-      
+  
       <canvas></canvas>
   
       <div class="control">
@@ -54,21 +53,24 @@
         <button id="right" class="btn_right">&#8594;</button>
       </div>
     </div>
+  
     <div class="lose">
       <h1>YOU LOSE</h1>
       <img src="./src/images/pacmanLose.jpg" />
       <p>Come on again</p>
       <div class="btnReset" onclick="window.location.reload()">RESET</div>
     </div>
+    
     <div class="win">
       <h1>YOU WIN</h1>
       <img src="./src/images/pacmanWin.jpg" />
       <p>Your time is: <span class="timer"></span></p>
       <div class="btnReset" onclick="window.location.reload()">RESET</div>
     </div>
-
-
-  <!-- js/engine -->
+  
+  
+    <!-- js/engine -->
     <script src="./src/scripts/engine.js" defer></script>
+    
   </body>
 </html>
