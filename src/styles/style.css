@@ -114,7 +114,7 @@ h1 {
 	box-shadow: -2px 3px 0 #880000, -3px 4px 0 #000;
 }
 
-.btn_right {
+#right {
 	padding: 0 0.2rem;
 	box-shadow: 2px 3px 0 #880000, 3px 4px 0 #000;
 }
@@ -134,7 +134,7 @@ h1 {
 	box-shadow: inset -3px 4px 0 #222;
 }
 
-.btn_right:active {
+#right:active {
 	box-shadow: inset 3px 4px 0 #222;
 }
 
