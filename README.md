@@ -2,7 +2,12 @@
 
 Pacman game made in JavaScript, accessible for mobile and computers.
 
+## Screenshot
+
 [Play here](https://munique-feitoza.github.io/pacman_in_js/)
+
+![Screenshot_2023-11-06-14-20-22-286_com android chrome](https://github.com/Munique-Feitoza/pacman_in_js/assets/140446097/7d6378be-fdb2-471c-bdf6-96d0965ef478)
+
 
 ## Timeline
 <details>
