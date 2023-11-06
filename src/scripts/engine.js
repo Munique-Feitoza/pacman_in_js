@@ -2,10 +2,10 @@ const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 const scoreNumber = document.querySelector('.scoreNumber');
 const timeNumber = document.querySelector('.timeNumber');
-const btn_up = document.querySelector('.btn_up');
-const btn_left = document.querySelector('.btn_left');
-const btn_down = document.querySelector('.btn_down');
-const btn_right = document.querySelector('.btn_right');
+const btn_up = document.getElementById('up');
+const btn_left = document.getElementById('left');
+const btn_down = document.getElementById('down');
+const btn_right = document.getElementById('right');
 const info = document.querySelector('.info');
 const lose = document.querySelector('.lose');
 const win = document.querySelector('.win');
@@ -214,30 +214,14 @@ const player = new Player({
 });
 
 const keys = {
-  w: {
-    pressed: false
-  },
-  a: {
-    pressed: false
-  },
-  s: {
-    pressed: false
-  },
-  d: {
-    pressed: false
-  },
-  btn_up: {
-    pressed: false
-  },
-  btn_left: {
-    pressed: false
-  },
-  btn_down: {
-    pressed: false
-  },
-  btn_right: {
-    pressed: false
-  }
+  w:  false,
+  a:  false,
+  s:  false,
+  d:  false,
+  btn_up:  false,
+  btn_left: false,
+  btn_down: false,
+  btn_right: false
 }
 
 let lastKey = '';
@@ -483,7 +467,7 @@ function animate() {
   animationId = requestAnimationFrame(animate);
   c.clearRect(0, 0, canvas.width, canvas.height);
 
-  if ((keys.w.pressed && lastKey === 'w') || (keys.btn_up.pressed && lastKey === 'btn_up')) {
+  if ((keys.w && lastKey === 'w') || (keys.btn_up && lastKey === 'btn_up')) {
     for (let i = 0; i < boundaries.length; i++) {
       const boundary = boundaries[i];
       if (collides({
@@ -503,7 +487,7 @@ function animate() {
         player.velocity.y = -4;
       }
     }
-  } else if ((keys.a.pressed && lastKey === 'a') || (keys.btn_left.pressed && lastKey === 'btn_left')) {
+  } else if ((keys.a && lastKey === 'a') || (keys.btn_left && lastKey === 'btn_left')) {
     for (let i = 0; i < boundaries.length; i++) {
       const boundary = boundaries[i];
       if (collides({
@@ -523,7 +507,7 @@ function animate() {
         player.velocity.x = -4;
       }
     }
-  } else if ((keys.s.pressed && lastKey === 's') || (keys.btn_down.pressed && lastKey === 'btn_down')) {
+  } else if ((keys.s && lastKey === 's') || (keys.btn_down && lastKey === 'btn_down')) {
     for (let i = 0; i < boundaries.length; i++) {
       const boundary = boundaries[i];
       if (collides({
@@ -543,7 +527,7 @@ function animate() {
         player.velocity.y = 4;
       }
     }
-  } else if ((keys.d.pressed && lastKey === 'd') || (keys.btn_right.pressed && lastKey === 'btn_right')) {
+  } else if ((keys.d && lastKey === 'd') || (keys.btn_right && lastKey === 'btn_right')) {
     for (let i = 0; i < boundaries.length; i++) {
       const boundary = boundaries[i];
       if (collides({
@@ -740,59 +724,30 @@ function animate() {
 setInterval(animate(), 1000 / 60);
 
 addEventListener('keydown', ({ key }) => {
-  switch (key) {
-    case 'w':
-      keys.w.pressed = true;
-      lastKey = 'w';
-      break;
-    case 'a':
-      keys.a.pressed = true;
-      lastKey = 'a';
-      break;
-    case 's':
-      keys.s.pressed = true;
-      lastKey = 's';
-      break;
-    case 'd':
-      keys.d.pressed = true;
-      lastKey = 'd';
-      break;
-  }
+  keys[key] = true;
+  lastKey = key; 
 })
 
 addEventListener('keyup', ({ key }) => {
-  switch (key) {
-    case 'w':
-      keys.w.pressed = false;
-      break;
-    case 'a':
-      keys.a.pressed = false;
-      break;
-    case 's':
-      keys.s.pressed = false;
-      break;
-    case 'd':
-      keys.d.pressed = false;
-      break;
-  }
+  keys[key] = false;
 })
 
 btn_up.addEventListener('click', () => {
-  keys.btn_up.pressed = true;
+  keys.btn_up = true;
   lastKey = 'btn_up';
 })
 
 btn_left.addEventListener('click', () => {
-  keys.btn_left.pressed = true;
+  keys.btn_left = true;
   lastKey = 'btn_left';
 })
 
 btn_down.addEventListener('click', () => {
-  keys.btn_down.pressed = true;
+  keys.btn_down = true;
   lastKey = 'btn_down';
 })
 
 btn_right.addEventListener('click', () => {
-  keys.btn_right.pressed = true;
+  keys.btn_right = true;
   lastKey = 'btn_right';
 })

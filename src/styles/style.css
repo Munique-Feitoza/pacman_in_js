@@ -6,7 +6,7 @@ body {
 
 p {
 	color: #fff;
-	padding: 0.5rem 1rem ;
+	padding: 0.5rem 1rem;
 	font-size: 30px;
 }
 
@@ -21,7 +21,10 @@ p {
 	left: 0;
 }
 
-#left, #right, #up, #down {
+#left,
+#right,
+#up,
+#down {
 	text-align: center;
 	color: #fff;
 	background-color: #f10000;
@@ -31,68 +34,82 @@ p {
 	font-size: 30px;
 }
 
-.info, .lose, .win, .btnStart, .btnReset {
-  background-color: #000;
-  border: 4px solid #0000ff;
-  margin: 1rem;
-  color: #fff;
+.info,
+.lose,
+.win,
+.btnStart,
+.btnReset {
+	background-color: #000;
+	border: 4px solid #0000ff;
+	margin: 1rem;
+	color: #fff;
 }
 
-.info, .lose, .win {
-  padding: 3rem 1rem;
-  margin: 1rem 1rem;
+.info,
+.lose,
+.win {
+	padding: 3rem 1rem;
+	margin: 1rem 1rem;
 }
 
-.info p, .lose p, .win p {
-  margin: 1rem 0;
+.info p,
+.lose p,
+.win p {
+	margin: 1rem 0;
 }
 
-.btnStart, .btnReset {
-  padding: 1rem 1rem;
+.btnStart,
+.btnReset {
+	padding: 1rem 1rem;
 }
 
-.btnStart:hover, .btnStart:acitve, .btnReset:hover, .btnReset:acitve {
-  background-color: #0000ff;
+.btnStart:hover,
+.btnStart:acitve,
+.btnReset:hover,
+.btnReset:acitve {
+	background-color: #0000ff;
 }
 
 li {
-  padding-bottom: 4rem;
+	padding-bottom: 4rem;
 }
 
 .lose img {
-  width: 40%;
+	width: 40%;
 }
 
 .win img {
-  width: 60%;
+	width: 60%;
 }
 
 img {
-  width: 50%;
-  padding-bottom: 2rem;
+	width: 50%;
+	padding-bottom: 2rem;
 }
 
 h1 {
-  padding: 2rem 0 1rem;
-  font-size: 50px;
+	padding: 2rem 0 1rem;
+	font-size: 50px;
 }
 
 .status {
-  display: flex;
-  margin: 0 3rem;
+	display: flex;
+	margin: 0 3rem;
 }
 
 #time {
-  position: fixed;
-  right: 3rem;
-  text-align: right;
+	position: fixed;
+	right: 3rem;
+	text-align: right;
 }
 
-.game, .lose, .win {
-  display: none;
+.game,
+.lose,
+.win {
+	display: none;
 }
 
-.btn_left {
+#left {
 	padding: 0 0.2rem;
 	box-shadow: -2px 3px 0 #880000, -3px 4px 0 #000;
 }
@@ -102,18 +119,18 @@ h1 {
 	box-shadow: 2px 3px 0 #880000, 3px 4px 0 #000;
 }
 
-.btn_up,
-.btn_down {
+#up,
+#down {
 	padding: 0 0.7rem;
 	box-shadow: 0 3px 0 #880000, 0 4px 0 #000;
 }
 
-.btn_up:active,
-.btn_down:active {
+#up:active,
+#down:active {
 	box-shadow: inset 0 4px 0 #222;
 }
 
-.btn_left:active {
+#left:active {
 	box-shadow: inset -3px 4px 0 #222;
 }
 
@@ -134,16 +151,16 @@ h1 {
 	.control {
 		display: block;
 	}
-	
+
 	h1 {
-	  font-size: 22px;
+		font-size: 22px;
 	}
-	
+
 	.status {
-	  margin: 0 0;
+		margin: 0 0;
 	}
-	
+
 	#time {
-	  right: 0;
+		right: 0;
 	}
 }
