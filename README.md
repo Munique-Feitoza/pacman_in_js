@@ -1,57 +1,64 @@
-# Pacman in JavaScript
+# 🎮 Pacman em JavaScript
 
-Pacman game made in JavaScript, accessible for mobile and computers.
+Um clone completo do Pacman desenvolvido com JavaScript puro, HTML5 Canvas e CSS. Totalmente funcional em dispositivos móveis e computadores!
 
-## Screenshot
+[![Jogar Pacman](https://img.shields.io/badge/JOGAR-AGORA-brightgreen?style=for-the-badge)](https://munique-feitoza.github.io/pacman_in_js/)
+![Captura de Tela](https://github.com/Munique-Feitoza/pacman_in_js/assets/140446097/7d6378be-fdb2-471c-bdf6-96d0965ef478)
 
-[Play here](https://munique-feitoza.github.io/pacman_in_js/)
+## ✨ Funcionalidades
 
-![Screenshot_2023-11-06-14-20-22-286_com android chrome](https://github.com/Munique-Feitoza/pacman_in_js/assets/140446097/7d6378be-fdb2-471c-bdf6-96d0965ef478)
+- **Jogabilidade completa** com frutas, power-ups e fantasmas
+- **Controles mobile** com botões na tela
+- **Sistema de pontuação** e cronômetro
+- **Condições de vitória/derrota** com telas diferentes
+- **Animações autênticas** incluindo movimento de boca do Pacman
+- **Efeitos sonoros** para ações do jogo
 
+## 🛠️ Tecnologias Utilizadas
 
-## Timeline
+| Componente       | Tecnologia  | Descrição                          |
+|-----------------|-------------|------------------------------------|
+| Motor do Jogo   | JavaScript  | Lógica principal e estados do jogo |
+| Renderização    | Canvas API  | Elementos visuais e animações      |
+| Controles/UI    | HTML/CSS    | Interface responsiva               |
+| Áudio           | Web Audio   | Efeitos sonoros                    |
+
+## 📅 Linha do Tempo
+
 <details>
-  <summary>Basic Game</summary>
-  <ol>
-    <li>Project setup - 23/10/2023</li>
-    <li>Generate map boundaries - 24/10/2023</li>
-		<li>Generate buttons - 24/10/2023</li>
-    <li>Add Pacman - 24/10/2023</li>
-		<li>Add movement - 25/10/2023</li>
-    <li>Add collision - 25/10/2023</li>
-		<li>Map style - 25/10/2023</li>
-    <li>Generate fruit - 26/10/2023</li>
-		<li>Eat fruit - 26/10/2023</li>
-    <li>Add score - 26/10/2023</li>
-		<li>Create ghost - 28/10/2023</li>
-    <li>Fix bugs - 29/10/2023</li>
-		<li>Create big fruit - 29/10/2023</li>
-    <li>Add win condition - 31/10/2023</li>
-		<li>Lay out a full level - 31/10/2023</li>
-    <li>Pacman chomp animation - 31/10/2023</li>
-  </ol>
+  <summary>Ver Progresso</summary>
+  
+  ### 🏗️ Base (23-26/Out)
+  - 23/10: Configuração inicial
+  - 24/10: Geração do mapa e controles
+  - 25/10: Sistema de colisões
+  - 26/10: Pontuação e power-ups
+
+  ### 👻 Recursos Avançados (28-31/Out)
+  - 28/10: IA dos fantasmas
+  - 29/10: Correções de bugs
+  - 31/10: Animações e condições de vitória
 </details>
 
- ## About this code
+## 📚 Documentação Útil
 
-- Using:  
-_JavaScript_  
-_HTML_  
-_CSS_
+- [Documentação Canvas](https://developer.mozilla.org/pt-BR/docs/Web/API/Canvas_API/Tutorial)
+- [Referência JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [Arquivos do Projeto](https://drive.google.com/drive/folders/1Cvq2RVrv-z2rR3wPZjgJrUgOAjVSVzj9?usp=sharing)
 
-- Style:  
-_Canvas_ - HTML/JS  
-_CSS_
+## 👩💻 Sobre a Desenvolvedora
 
+**[Munique Feitoza](https://www.linkedin.com/in/munique-feitoza-77034b231/)**  
+Estudante de programação apaixonada por desenvolvimento de jogos.
 
-## Creator
+> "Desenvolvi este jogo inteiro usando apenas um celular, mostrando que com determinação podemos criar projetos incríveis com qualquer ferramenta!"
 
-**[Munique Feitoza](https://www.linkedin.com/in/munique-feitoza-77034b231/)**
- >Yeah, I used a cellphone to do this game.
+---
 
+### 🚧 Melhorias Futuras
+- [ ] Adicionar múltiplas fases
+- [ ] Implementar diferentes comportamentos para fantasmas
+- [ ] Sistema de recordes
+- [ ] Otimização para mobile
 
-## Documentation:
-
-- [Canvas](https://developer.mozilla.org/pt-BR/docs/Web/API/Canvas_API/Tutorial)  
-- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)  
-- [Drive](https://drive.google.com/drive/folders/1Cvq2RVrv-z2rR3wPZjgJrUgOAjVSVzj9?usp=sharing)
+⭐ Dê uma estrela no repositório se gostou do projeto! Contribuições são bem-vindas.
